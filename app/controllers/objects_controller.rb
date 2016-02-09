@@ -9,7 +9,7 @@ class ObjectsController < ApplicationController
   end
 
   def destroy
-    $redis.del(params[:key])
+    $redis.del(params[:id])
     redirect_to root_path
   end
 end

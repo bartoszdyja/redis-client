@@ -23,7 +23,7 @@
     <%= "and has a value of: #{get_value(k)}" %>
   </p>
   <p>
-    <%=link_to 'Delete', destroy_path(key: k), :method => :delete %>
+    <%=link_to 'Delete', object_path(k), :method => :delete %>
   </p>
 <% end %>
 <h2> sdfa </h2>
