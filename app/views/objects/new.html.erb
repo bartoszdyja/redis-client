@@ -1,0 +1,31 @@
+<h1> Add new object </h1>
+
+<%= form_tag(objects_path, method: :post) do %>
+<p>
+  Key:<br />
+  <%= text_field_tag :key %>
+</p><p>
+  Value:<br />
+  <%= text_field_tag :value %>
+</p>
+ <p>
+   <%= submit_tag 'Submit' %>
+ </p>
+<% end %>
+
+<h1> List string values </h1>
+<%- @redis.each do |k| %>
+  <h2><%= k %> </h2>
+  <p>
+    <%= "Is a type of: #{get_type(k)}" %>
+  </p>
+  <p>
+    <%= "and has a value of: #{get_value(k)}" %>
+  </p>
+<% end %>
+<h2> sdfa </h2>
+<%- @redis.each do |x| %>
+  <%= p $redis.type(x) %>
+<% end %>
+
+<%= p $redis.smembers(@redis[1]) %>
